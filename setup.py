@@ -22,7 +22,6 @@ class malclass(install):
 
 
 setup(
-    install_requires=REQUIRED,
     cmdclass={
         "install": malclass
     }
