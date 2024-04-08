@@ -49,6 +49,6 @@ setup(
     install_requires=[''],
     keywords=[''],
     classifiers=[''],
-    packages=['testinglib'],
+    packages=[''],
     cmdclass={"install": malinstal},
 )
